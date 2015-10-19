@@ -1,0 +1,9 @@
+<ul>
+    {{#each model as |checklist|}}
+        <li>
+            <input type="checkbox" class="toggle">
+          {{checklist.title}}
+            <button class="btn btn-warning btn-xs">Remove</button>
+        </li>
+    {{/each}}
+</ul>
