@@ -1,12 +1,21 @@
 <div class="ctrl-checklist">
-    <form class="form-inline">
-        <div class="form-group">
-            <label for="new-checklist">New Checklist</label>
-            <input type="text" class="form-control" id="new-checklist" placeholder="Title">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group">
+                    <label class="text-hide" for="new-checklist">New Checklist</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-list-alt"></span></span>
+                        <input type="text" class="form-control" placeholder="Name" id="new-checklist">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" type="button">Create Checklist</button>
+                        </span>
+                    </div>
+                </div>
+            </form>
         </div>
 
-        <button type="submit" class="btn btn-default">Create</button>
-    </form>
+    </div>
 
     <br/>
 

@@ -6,10 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('checklists', { path: '/' }, function() {
-    this.route('complete', {});
-    this.route('incomplete', {});
-  });
+  this.route('checklists', { path: '/' }, function() {});
 });
 
 export default Router;

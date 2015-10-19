@@ -1,1 +1,7 @@
-{{yield}}
+<article class="checklist-item">
+    <h1>{{checklist.title}}</h1>
+    <p>Created at: {{parse-date checklist.updated_at 'lll'}}</p>
+    <button class="btn btn-warning btn-xs">Remove</button>
+</article>
+
+
