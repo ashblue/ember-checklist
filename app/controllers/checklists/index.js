@@ -1,12 +1,19 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  getText() {
-    return 'my text';
-  },
+export default Ember.ArrayController.extend({
+  groupChecklists: function () {
+    var groupSize = 3;
+    var stack = [];
+    var group = [];
+    this.forEach(function (checklist, index) {
+      if (index % groupSize === 0) {
+        group = [];
+        stack.push(group);
+      }
 
-  groupChecklists() {
-    console.log('checklists ran');
-    return [];
-  }
+      group.push(checklist);
+    });
+
+    return stack;
+  }.property('content.[]')
 });

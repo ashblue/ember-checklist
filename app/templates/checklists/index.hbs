@@ -1,3 +1,9 @@
-{{#each model as |checklist|}}
-    {{checklist-item checklist=checklist}}
+{{#each groupChecklists}}
+  <div class="row">
+  {{#each this as |item|}}
+    <div class="col-md-4">
+      {{checklist-item checklist=item}}
+    </div>
+  {{/each}}
+  </div>
 {{/each}}
