@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
+export default Ember.Controller.extend({
   groupChecklists: function () {
     var groupSize = 3;
     var stack = [];
     var group = [];
-    this.forEach(function (checklist, index) {
+    this.model.sortBy('updated_at').reverse().forEach(function (checklist, index) {
       if (index % groupSize === 0) {
         group = [];
         stack.push(group);

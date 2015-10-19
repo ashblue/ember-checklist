@@ -7,28 +7,8 @@ export default function() {
   //  };
   //});
   this.get('/checklists');
-  this.post('/checklists', function(db, request) {
-    let attrs = JSON.parse(request.requestBody);
-    let checklist = db.checklists.insert(attrs);
-    return {
-      data: {
-        type: 'checklists',
-        id: checklist.id,
-        attributs: checklist
-      }
-    };
-  });
-  this.patch('/checklists/:id', function(db, request) {
-    let attrs = JSON.parse(request.requestBody);
-    let checklist = db.checklists.update(attrs.data.id, attrs.data.attributes);
-    return {
-      data: {
-        type: "checklists",
-        id: checklist.id,
-        attributes: checklist
-      }
-    };
-  });
+  this.post('/checklists');
+  this.put('/checklists/:id');
   this.del('/checklists/:id');
 
   // These comments are here to help you get started. Feel free to delete them.

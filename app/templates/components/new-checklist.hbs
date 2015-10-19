@@ -1,0 +1,13 @@
+<form {{action "this.submitChecklist" on="submit"}}>
+    <div class="form-group">
+        <label class="text-hide" for="new-checklist">New Checklist</label>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-list-alt"></span></span>
+          {{input value=checklist.title type="text" class="form-control" placeholder="Name" id="new-checklist"}}
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Create Checklist</button>
+            </span>
+        </div>
+    </div>
+</form>

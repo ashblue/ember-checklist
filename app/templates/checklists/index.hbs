@@ -1,6 +1,6 @@
-{{#each groupChecklists}}
+{{#each groupChecklists as |group|}}
   <div class="row">
-  {{#each this as |item|}}
+  {{#each group as |item|}}
     <div class="col-md-4">
       {{checklist-item checklist=item}}
     </div>
