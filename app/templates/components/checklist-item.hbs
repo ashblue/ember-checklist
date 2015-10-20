@@ -1,4 +1,4 @@
-<article class="checklist-item">
+  <article class="checklist-item">
     <div class="panel panel-default">
         <div class="panel-body">
             <a class="checklist-item-link" href="#">
@@ -9,7 +9,7 @@
         <div class="panel-heading">
             <footer class="checklist-item-footer">
                 <small>{{parse-date checklist.updated_at 'lll'}}</small>
-                <button class="btn btn-danger btn-xs pull-right"><span class="glyphicon glyphicon-trash"></span></button>
+                <button {{action "delete"}} class="btn btn-danger btn-xs pull-right"><span class="glyphicon glyphicon-trash"></span></button>
             </footer>
         </div>
     </div>
