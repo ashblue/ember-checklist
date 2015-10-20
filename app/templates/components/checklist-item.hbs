@@ -1,7 +1,18 @@
 <article class="checklist-item">
-    <h1>{{checklist.title}}</h1>
-    <p>Created at: {{parse-date checklist.updated_at 'lll'}}</p>
-    <button class="btn btn-warning btn-xs">Remove</button>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <a class="checklist-item-link" href="#">
+                <h1 class="checklist-item-title">{{checklist.title}}</h1>
+            </a>
+        </div>
+
+        <div class="panel-heading">
+            <footer class="checklist-item-footer">
+                <small>{{parse-date checklist.updated_at 'lll'}}</small>
+                <button class="btn btn-danger btn-xs pull-right"><span class="glyphicon glyphicon-trash"></span></button>
+            </footer>
+        </div>
+    </div>
 </article>
 
 

@@ -2,6 +2,39 @@
   background: #ccc;
 }
 
+.checklist-item {
+  $height: 170px;
+
+  .checklist-item-link {
+    height: $height;
+    line-height: $height;
+    text-overflow: ellipsis;
+    background: #eee;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      background: #ddd;
+    }
+
+    .checklist-item-title {
+      font-size: 24px;
+      color: #777;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+      padding: 20px;
+      max-height: $height;
+      overflow: hidden;
+    }
+  }
+
+  .checklist-item-footer {
+
+  }
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
