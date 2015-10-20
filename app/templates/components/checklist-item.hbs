@@ -1,18 +1,18 @@
-  <article class="checklist-item">
+<article class="checklist-item">
     <div class="panel panel-default">
         <div class="panel-body">
-            <a class="checklist-item-link" href="#">
-                <h1 class="checklist-item-title">{{checklist.title}}</h1>
-            </a>
+          {{#link-to 'checklists.show' checklist class="checklist-item-link"}}
+              <h1 class="checklist-item-title">{{checklist.title}}</h1>
+          {{/link-to}}
         </div>
 
         <div class="panel-heading">
             <footer class="checklist-item-footer">
                 <small>{{parse-date checklist.updated_at 'lll'}}</small>
-                <button {{action "delete"}} class="btn btn-danger btn-xs pull-right"><span class="glyphicon glyphicon-trash"></span></button>
+                <button {{action "delete"}} class="btn btn-danger btn-xs pull-right">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
             </footer>
         </div>
     </div>
 </article>
-
-

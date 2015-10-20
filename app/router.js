@@ -6,7 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('checklists', { path: '/' }, function() {});
+  this.resource('checklists', function() {
+    this.route('show', { path: '/:checklist_id' });
+  });
 });
 
 export default Router;

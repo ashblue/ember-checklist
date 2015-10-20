@@ -1,9 +1,20 @@
-{{#each groupChecklists as |group|}}
-  <div class="row">
-  {{#each group as |item|}}
-        <div class="col-md-4">
-          {{checklist-item checklist=item}}
+<div class="ctrl-checklist">
+    <div class="row">
+        <div class="col-md-6">
+          {{new-checklist}}
         </div>
+    </div>
+
+  {{#each groupChecklists as |group|}}
+      <div class="row">
+        {{#each group as |item|}}
+            <div class="col-md-4">
+              {{checklist-item checklist=item}}
+            </div>
+        {{/each}}
+      </div>
   {{/each}}
-  </div>
-{{/each}}
+
+</div>
+
+

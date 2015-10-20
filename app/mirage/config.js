@@ -7,9 +7,10 @@ export default function() {
   //  };
   //});
   this.get('/checklists');
+  this.get('/checklists/:id');
   this.post('/checklists');
-  this.put('/checklists/:id');
   this.del('/checklists/:id');
+  this.put('/checklists/:id');
 
   // These comments are here to help you get started. Feel free to delete them.
 
