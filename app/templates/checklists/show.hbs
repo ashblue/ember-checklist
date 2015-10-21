@@ -1,1 +1,15 @@
-<h1>{{model.title}}</h1>
+<h1>
+    {{model.title}}
+    <button {{action "toggleForm"}} class="btn btn-default">
+        <span class="glyphicon glyphicon-pencil"></span>
+    </button>
+</h1>
+
+<form {{bind-attr class="showForm::hide"}} {{action "forceSave" on="submit"}}>
+    <div class="form-group">
+        <label class="hide" for="checklist-title">Title</label>
+        {{input value=model.title action="save" on="key-up" type="text" class="form-control" id="checklist-title" placeholder="Title {{bind-attr value=model.title}}"}}
+    </div>
+
+    <button class="btn btn-default">Save</button>
+</form>
