@@ -1,16 +1,15 @@
 export default function() {
-  //this.get('/checklists', function(db) {
-  //  return {
-  //    data: db.checklists.map(attrs => (
-  //    {type: 'checklists', id: attrs.id, attributes: attrs }
-  //    ))
-  //  };
-  //});
   this.get('/checklists');
   this.get('/checklists/:id');
   this.post('/checklists');
   this.del('/checklists/:id');
   this.put('/checklists/:id');
+
+  this.get('/entries');
+  this.get('/entries/:id');
+  this.post('/entries');
+  this.del('/entries/:id');
+  this.put('/entries/:id');
 
   // These comments are here to help you get started. Feel free to delete them.
 
