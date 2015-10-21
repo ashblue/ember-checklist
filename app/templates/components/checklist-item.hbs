@@ -1,18 +1,18 @@
 <article class="checklist-item">
     <div class="panel panel-default">
         <div class="panel-body">
-          {{#link-to 'checklists.show' checklist class="checklist-item-link"}}
-              <h1 class="checklist-item-title">
-                  {{checklist.title}}<br/>
-                    <small>
-                      {{#if entriesEmpty}}
-                          No Tasks Yet
-                      {{else}}
+            {{#link-to 'checklists.show' checklist class="checklist-item-link"}}
+            <h1 class="checklist-item-title">
+                {{checklist.title}}<br/>
+                <small>
+                    {{#if entriesEmpty}}
+                    No Tasks Yet
+                    {{else}}
                           {{entryCount}} Tasks
-                      {{/if}}
-                    </small>
-              </h1>
-          {{/link-to}}
+                    {{/if}}
+                </small>
+            </h1>
+            {{/link-to}}
         </div>
 
         <div class="panel-heading">
