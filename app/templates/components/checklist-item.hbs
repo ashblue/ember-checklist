@@ -2,7 +2,16 @@
     <div class="panel panel-default">
         <div class="panel-body">
           {{#link-to 'checklists.show' checklist class="checklist-item-link"}}
-              <h1 class="checklist-item-title">{{checklist.title}}</h1>
+              <h1 class="checklist-item-title">
+                  {{checklist.title}}<br/>
+                    <small>
+                      {{#if entriesEmpty}}
+                          No Tasks Yet
+                      {{else}}
+                          {{checklist.entries.length}} Tasks
+                      {{/if}}
+                    </small>
+              </h1>
           {{/link-to}}
         </div>
 
