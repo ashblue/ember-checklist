@@ -8,6 +8,7 @@ export default Ember.Component.extend({
 
   actions: {
     submitChecklist () {
+      if (!this.get('newChecklist').title) return;
       this.get('targetObject.store').createRecord('checklist', this.get('newChecklist')).save();
 
       var $checklist = this.$('#checklist-form');
