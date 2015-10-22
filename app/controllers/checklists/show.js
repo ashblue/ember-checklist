@@ -6,7 +6,9 @@ export default Ember.Controller.extend({
 
   saveModal: function () {
     var model = this.get('model');
-    if (model.isDirty) model.save();
+    if (model.isDirty) {
+        model.save();
+    }
   },
 
   actions: {
@@ -17,17 +19,16 @@ export default Ember.Controller.extend({
 
     forceSave: function () {
       var debounced = this.get('debounced');
-      if (debounced) Ember.run.cancel(debounced);
+      if (debounced) {
+          Ember.run.cancel(debounced);
+      }
+
       this.get('saveModal').call(this);
     },
 
     save: function () {
       var debounced = Ember.run.debounce(this, this.get('saveModal'), 2000); // 2 seconds
       this.set('debounced', debounced);
-    },
-
-    addEntry: function () {
-
     }
   }
 });

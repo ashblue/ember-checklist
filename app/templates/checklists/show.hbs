@@ -25,15 +25,7 @@
 <div class="checklist-entries">
     <h2 class="sr-only">Checklist</h2>
 
-    <form class="form-inline" {{action "addEntry" on="submit"}}>
-        <div class="form-group">
-            <label class="sr-only" for="checklist-text">Task Title</label>
-            {{input autofocus="autofocus" value=entryText type="text" class="form-control" id="checklist-text"
-            placeholder="Task Title"}}
-        </div>
-
-        <button class="btn btn-default">Add Entry</button>
-    </form>
+    {{entry-new}}
 
     {{#each model.entries as |entry|}}
         {{entry-item entry=entry}}
