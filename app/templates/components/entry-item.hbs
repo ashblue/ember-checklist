@@ -1,0 +1,14 @@
+<form class="entry-item clearfix">
+    <div class="entry-item-checkbox">
+        {{input tabindex="-1" type="checkbox" checked=entry.complete}}
+        <span {{action "toggleComplete" on="click"}}>
+            <span class="sr-only">Complete?</span>
+            <span class="checkbox checked glyphicon glyphicon-check"></span>
+            <span class="checkbox unchecked glyphicon glyphicon-unchecked"></span>
+        </span>
+    </div>
+
+    <div class="entry-item-input">
+        {{input type="text" key-up="save" placeholder="Untitled" value=entry.text}}
+    </div>
+</form>

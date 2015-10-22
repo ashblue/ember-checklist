@@ -5,7 +5,7 @@
     </button>
 </h1>
 
-<div {{bind-attr class="showForm::hide"}}>
+<div class="{{unless showForm "hide"}}">
     <div class="panel panel-default">
         <div class="panel-body">
             <h5>Edit Details</h5>
@@ -13,8 +13,7 @@
             <form class="form-inline" {{action "forceSave" on="submit"}}>
                 <div class="form-group">
                     <label class="sr-only" for="checklist-title">Title</label>
-                    {{input value=model.title action="save" on="key-up" type="text" class="form-control" id="checklist-title"
-                  placeholder="Title {{bind-attr value=model.title}}"}}
+                    {{input value=model.title enter="save" key-up="save" type="text" class="form-control" id="checklist-title"}}
                 </div>
 
                 <button class="btn btn-default">Save</button>
@@ -30,27 +29,13 @@
         <div class="form-group">
             <label class="sr-only" for="checklist-text">Task Title</label>
             {{input autofocus="autofocus" value=entryText type="text" class="form-control" id="checklist-text"
-          placeholder="Task Title"}}
+            placeholder="Task Title"}}
         </div>
 
         <button class="btn btn-default">Add Entry</button>
     </form>
 
     {{#each model.entries as |entry|}}
-    <form class="entry-item clearfix">
-        <div class="entry-item-checkbox">
-            <input tabindex="-1" type="checkbox">
-              <span>
-                  <span class="sr-only">Complete?</span>
-                  <span class="checkbox checked glyphicon glyphicon-check"></span>
-                  <span class="checkbox unchecked glyphicon glyphicon-unchecked"></span>
-              </span>
-        </div>
-
-        <div class="entry-item-input">
-            <label class="sr-only" for="task-title">Task Title</label>
-            <input type="text" id="task-title" placeholder="Untitled">
-        </div>
-    </form>
+        {{entry-item entry=entry}}
     {{/each}}
 </div>

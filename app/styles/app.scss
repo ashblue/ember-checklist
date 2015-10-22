@@ -35,6 +35,72 @@
   }
 }
 
+.entry-item {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 5px;
+  position: relative;
+  user-select: none;
+
+  .entry-item-checkbox {
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    user-select: none;
+
+    .checkbox {
+      font-size: 30px;
+      cursor: pointer;
+      margin: 0;
+
+      &.checked {
+        color: rgb(2, 184, 37);
+      }
+
+      &.unchecked {
+        color: #b0b0b0;
+      }
+    }
+
+    [type="checkbox"] {
+      position: absolute;
+      left: -9999px;
+
+      &:not(:checked) + span {
+        .checked {
+          display: none;
+        }
+      }
+
+      &:checked + span {
+        .unchecked {
+          display: none;
+        }
+      }
+    }
+
+    [type="checkbox"]:not(:checked) + .checked {
+      display: none;
+    }
+  }
+
+  .entry-item-input {
+    width: 100%;
+    padding-left: 32px;
+
+    input {
+      width: 100%;
+      border: none;
+      background: none;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

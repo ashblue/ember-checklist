@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   showForm: false,
+  entryText: '',
 
   saveModal: function () {
     var model = this.get('model');
@@ -23,6 +24,10 @@ export default Ember.Controller.extend({
     save: function () {
       var debounced = Ember.run.debounce(this, this.get('saveModal'), 2000); // 2 seconds
       this.set('debounced', debounced);
+    },
+
+    addEntry: function () {
+
     }
   }
 });
