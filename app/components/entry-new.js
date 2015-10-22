@@ -11,13 +11,10 @@ export default Ember.Component.extend({
             if (!newEntry.text) return;
 
             // Bind the entry to the current checklist
-            newEntry.checklist = checklist.id;
+            newEntry.checklist = checklist;
 
             var entry = this.get('targetObject.store').createRecord('entry', newEntry);
             entry.save().then(function () {
-                // Bind checklist to the newly created entry
-                //console.log(entry, entry.get('id'), checklist);
-                checklist.get('entries').pushObject(entry);
                 checklist.save();
             });
 
