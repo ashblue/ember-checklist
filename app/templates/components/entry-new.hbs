@@ -1,7 +1,7 @@
 <form id="entry-form" class="form-inline" {{action "addEntry" on="submit"}}>
     <div class="form-group">
         <label class="sr-only" for="entry-text">Task Title</label>
-        {{input value=newEntry.text autofocus="autofocus" type="text" class="form-control" id="entry-text"
+        {{input autocomplete="off" value=newEntry.text autofocus="autofocus" type="text" class="form-control" id="entry-text"
         placeholder="Task Title"}}
     </div>
 

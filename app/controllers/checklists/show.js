@@ -1,34 +1,38 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  showForm: false,
-  entryText: '',
+    showForm: false,
+    entryText: '',
 
-  saveModal: function () {
-    var model = this.get('model');
-    if (model.isDirty) {
-        model.save();
-    }
-  },
-
-  actions: {
-    toggleForm: function () {
-      var showForm = this.get('showForm');
-      this.set('showForm', !showForm);
+    saveModel: function () {
+        var model = this.get('model');
+        if (model.isDirty) {
+            model.save();
+        }
     },
 
-    forceSave: function () {
-      var debounced = this.get('debounced');
-      if (debounced) {
-          Ember.run.cancel(debounced);
-      }
+    entriesByDate: function () {
+        return this.get('content.entries').sortBy('created_at').reverse();
+    }.property('content.entries.[]'),
 
-      this.get('saveModal').call(this);
-    },
+    actions: {
+        toggleForm: function () {
+            var showForm = this.get('showForm');
+            this.set('showForm', !showForm);
+        },
 
-    save: function () {
-      var debounced = Ember.run.debounce(this, this.get('saveModal'), 2000); // 2 seconds
-      this.set('debounced', debounced);
+        forceSave: function () {
+            var debounced = this.get('debounced');
+            if (debounced) {
+                Ember.run.cancel(debounced);
+            }
+
+            this.get('saveModel').call(this);
+        },
+
+        save: function () {
+            var debounced = Ember.run.debounce(this, this.get('saveModel'), 2000); // 2 seconds
+            this.set('debounced', debounced);
+        }
     }
-  }
 });
