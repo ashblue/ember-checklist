@@ -18,6 +18,14 @@ export default Ember.Component.extend({
         save: function () {
             var debounced = Ember.run.debounce(this, this.get('saveEntry'), 2000); // 2 seconds
             this.set('debounced', debounced);
+        },
+
+        delete: function () {
+            var entry = this.get('entry');
+            var checklist = entry.get('checklist');
+            checklist.get('entries').removeObject(entry);
+            entry.destroyRecord();
+            checklist.save();
         }
     }
 });

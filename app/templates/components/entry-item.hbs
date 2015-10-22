@@ -11,4 +11,10 @@
     <div class="entry-item-input">
         {{input type="text" key-up="save" placeholder="Untitled" value=entry.text}}
     </div>
+
+    <div class="entry-item-delete">
+        <button {{action "delete"}} class="btn btn-danger btn-sm pull-right">
+            <span class="glyphicon glyphicon-trash"></span>
+        </button>
+    </div>
 </form>
