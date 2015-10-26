@@ -1,4 +1,6 @@
 export default function () {
+    // this.namespace = '/api'
+
     this.get('/checklists');
     this.get('/checklists/:id');
     this.post('/checklists');

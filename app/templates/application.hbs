@@ -13,23 +13,34 @@
                 {{#link-to "index" class="navbar-brand"}}Simple Checklist{{/link-to}}
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    {{#active-link}}
-                        {{link-to "Lists" "checklists"}}
-                    {{/active-link}}
-                </ul>
+                {{#if isAuthenticated}}
+                    <ul class="nav navbar-nav">
+                        {{#active-link}}
+                            {{link-to "Lists" "checklists"}}
+                        {{/active-link}}
+                    </ul>
+                {{/if}}
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Ash Blue <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Log Out</a></li>
-                        </ul>
-                    </li>
+                    {{#if isAuthenticated}}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">Ash Blue <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a {{action 'logout'}}>Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    {{else}}
+                        {{#active-link}}
+                            {{#link-to 'auth/login'}}Login{{/link-to}}
+                        {{/active-link}}
+                    {{/if}}
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
