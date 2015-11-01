@@ -23,6 +23,12 @@ module.exports = function (environment) {
         }
     };
 
+    ENV['ember-simple-auth'] = {
+        authenticationRoute: 'auth/login',
+        routeAfterAuthentication: 'checklists',
+        routeIfAlreadyAuthenticated: 'checklists'
+    };
+
     if (environment === 'development') {
         // ENV.APP.LOG_RESOLVER = true;
         // ENV.APP.LOG_ACTIVE_GENERATION = true;
