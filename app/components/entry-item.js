@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     saveEntry: function () {
         var entry = this.get('entry');
-        if (entry.isDirty) {
+        if (entry && entry.isDirty) {
             entry.save();
         }
     },
@@ -12,11 +12,11 @@ export default Ember.Component.extend({
         toggleComplete: function () {
             var entry = this.get('entry');
             entry.set('complete', !entry.get('complete'));
-            this.send('save');
+            entry.save();
         },
 
         save: function () {
-            var debounced = Ember.run.debounce(this, this.get('saveEntry'), 2000); // 2 seconds
+            var debounced = Ember.run.debounce(this, this.get('saveEntry'), 200);
             this.set('debounced', debounced);
         },
 
