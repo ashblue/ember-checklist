@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend({
     attrs: {
-        entries: { serialize: true },
+        checklist: { serialize: true, key: 'checklist_id' },
         user: { serialize: true, key: 'user_id' }
     }
 });
