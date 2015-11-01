@@ -2,17 +2,68 @@
     <div class="col-lg-8 col-lg-offset-2">
         <div class="jumbotron">
             <div class="container">
-                <h1>Ember Checklist</h1>
+                <h1>{{fa-icon icon="fa-pencil"}} Ember Checklist</h1>
 
                 <p>This is an example checklist written with Ruby on Rails, Ember.js CLI, MongoDB, and Bootstrap. It's
                     built solid authentication security principles via Devise.</p>
 
-                <p>{{#link-to 'auth/register' class="btn btn-primary btn-lg"}}Get Started{{/link-to}}</p>
+                <p>{{#link-to 'auth/register' class="btn btn-primary btn-lg"}}Get Started
+                    &nbsp; {{fa-icon icon="fa-play"}}{{/link-to}}</p>
             </div>
         </div>
     </div>
 </div>
 
 <div class="row">
+    <div class="col-md-4">
+        <div class="media">
+            <div class="media-left">
+                {{fa-icon icon="fa-cogs" size="4x"}}
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Rails + Ember.js</h4>
 
+                <p>Ember.js and Ruby on Rails are the best of friends (most of the time). This app demonstrates
+                    the simpe modifications you'll need to make to a Rails app in order for it to properly communicate
+                    with Ember.js's structure.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="media">
+            <div class="media-left">
+                {{fa-icon icon="fa-database" size="4x"}}
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Server Authentication</h4>
+
+                <p>This application runs on a MongoDB database. It authenticates through Ember.js's
+                    Simple Auth plugin and the Rails Devise gem. Making for a powerful yet secure boiler plate.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="media">
+            <div class="media-left">
+                {{fa-icon icon="fa-link" size="4x"}}
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Nested Resources</h4>
+
+                <p>Relationships are complex. Particularly those in databases. Looking through the source code you'll
+                    see some simple but effective ways of dealing with has_many and belongs_to data bindings.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <h2>Get the source code</h2>
+
+    <p>Fork the source code on GitHub to use this as a boilerplate or find out how this was made.</p>
+
+    <a target="_blank" href="https://github.com/ashblue/ember-checklist" class="btn btn-default btn-lg">{{fa-icon icon="fa-github" size="lg"}} Ember.js</a>
+    <a target="_blank" href="https://github.com/ashblue/rails-checklist" class="btn btn-default btn-lg">{{fa-icon icon="fa-github" size="lg"}} Ruby on Rails</a>
 </div>
