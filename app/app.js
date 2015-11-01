@@ -13,6 +13,13 @@ App = Ember.Application.extend({
   Resolver: Resolver
 });
 
+// Fix Rails router issues with history shim
+if (config.environment === 'production') {
+  App.Router.reopen({
+    location: 'history'
+  });
+}
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;
