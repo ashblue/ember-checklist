@@ -36,6 +36,10 @@
                         </li>
                     {{else}}
                         {{#active-link}}
+                            {{#link-to 'auth/register'}}Register{{/link-to}}
+                        {{/active-link}}
+
+                        {{#active-link}}
                             {{#link-to 'auth/login'}}Login{{/link-to}}
                         {{/active-link}}
                     {{/if}}

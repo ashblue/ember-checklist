@@ -6,7 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function () {
+    // @NOTE Routes don't want to nest for some odd reason (bug possibly?)
     this.route('auth/login');
+    this.route('auth/register');
 
     this.resource('checklists', function () {
         this.route('show', {path: '/:checklist_id'});
